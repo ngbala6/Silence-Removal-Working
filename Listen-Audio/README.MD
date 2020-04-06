@@ -1,6 +1,4 @@
-Hello Welcome
-
-Here you can listen audio file using python code
+Hello Welcome, here you can listen audio file using python code
 
 # Step 1: 
 
