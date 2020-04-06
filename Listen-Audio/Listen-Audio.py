@@ -1,5 +1,8 @@
+# Import packages
 from pydub import AudioSegment
 from pydub.playback import play
 
-sound = AudioSegment.from_file("6TU5302374.wav", format="wav")
-play(sound)
+
+# Play audio
+playaudio = AudioSegment.from_file("Paste your File Name Here", format="wav")
+play(playaudio)
