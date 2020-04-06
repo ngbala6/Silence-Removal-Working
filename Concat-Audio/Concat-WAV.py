@@ -1,12 +1,15 @@
 import os
 from pydub import AudioSegment
+import glob
 
-wavset = ['chunk-00.wav','chunk-01.wav']
+wavfiles  = glob.glob("./Need-to-Mergeaudio/*.wav")
+print(wavfiles)
 
-wavs = [AudioSegment.from_wav(wav) for wav in wavset]
+wavs = [AudioSegment.from_wav(wav) for wav in wavfiles]
+
 combined = wavs[0]
 
 for wav in wavs[1:]:
     combined = combined.append(wav)
 
-combined.export(os.path.join(os.path.dirname(__file__), "output.wav"), format="wav")
+combined.export(os.path.join(os.path.dirname(__file__), "./Merged-Audio/Mergedaudio.wav"), format="wav")
