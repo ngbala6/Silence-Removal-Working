@@ -2,7 +2,7 @@ Hello Welcome, here you can merge audio file using python code
 
 # Step 1: 
 
-Put all your audio chunk files in "Need-to-Mergeaudio" folder
+Create a folder "Need-to-Mergeaudio" and put all your audio chunk files in that folder. Create another folder "Merged-Audio"
 
 # Step 1: 
 
