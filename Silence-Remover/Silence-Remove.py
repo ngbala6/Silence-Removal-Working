@@ -140,17 +140,20 @@ def vad_collector(sample_rate, frame_duration_ms,
 def main(args):
     if len(args) != 2:
         sys.stderr.write(
-            'Usage: example.py <aggressiveness> <path to wav file>\n')
+            'Usage: Silence-Remove.py <aggressiveness> <path to wav file>\n')
         sys.exit(1)
     audio, sample_rate = read_wave(args[1])
     vad = webrtcvad.Vad(int(args[0]))
     frames = frame_generator(30, audio, sample_rate)
     frames = list(frames)
     segments = vad_collector(sample_rate, 30, 300, vad, frames)
-    for i, segment in enumerate(segments):
-        path = 'chunk-%002d.wav' % (i,)
-        print(' Writing %s' % (path,))
-        write_wave(path, segment, sample_rate)
+
+    # Segmenting the Voice audio and save it in list as bytes
+    concataudio = [segment for segment in segments]
+
+    joinedaudio = b"".join(concataudio)
+
+    write_wave("Non-Silenced-Audio.wav", joinedaudio, sample_rate)
 
 
 if __name__ == '__main__':
