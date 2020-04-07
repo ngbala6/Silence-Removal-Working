@@ -6,7 +6,7 @@ Create a folder "Need-to-Mergeaudio" and put all your audio chunk files in that 
 
 # Step 1: 
 
-Install the Requirements file by using "pip install -r requirements.txt"
+Install the Requirements by using "pip install -r requirements.txt"
 
 # Step 3: 
 
